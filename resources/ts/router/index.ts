@@ -36,6 +36,64 @@ const routes = [
         },
         component: () => import('@/pages/ProfilePage.vue')
     },
+    {
+        path: '/admin/users',
+        name: 'AdminUsers',
+        meta: {
+            requiresAuth: true
+        },
+        component: () => import('@/pages/Admin/UsersPage.vue')
+    },
+    {
+        path: '/admin/categories',
+        name: 'AdminCategories',
+        meta: {
+            requiresAuth: true
+        },
+        component: () => import('@/pages/Admin/CategoriesPage.vue')
+    },
+    {
+        path: '/admin/products',
+        name: 'AdminProducts',
+        meta: {
+            requiresAuth: true
+        },
+        component: () => import('@/pages/Admin/ProductsPage.vue')
+    },
+    {
+        path: '/admin/servers',
+        name: 'AdminServers',
+        meta: {
+            requiresAuth: true
+        },
+        component: () => import('@/pages/Admin/ServersPage.vue')
+    },
+    {
+        path: '/admin/promocodes',
+        name: 'AdminPromocodes',
+        meta: {
+            requiresAuth: true
+        },
+        component: () => import('@/pages/Admin/PromocodesPage.vue')
+    },
+    {
+        path: '/admin/purchaseHistory',
+        name: 'AdminPurchaseHistory',
+        meta: {
+            requiresAuth: true
+        },
+        component: () => import('@/pages/Admin/PurchaseHistoryPage.vue')
+    },
+    {
+        path: '/admin/',
+        name: 'AdminIndexPage',
+        meta: {
+            requiresAuth: true
+        },
+        component: () => import('@/pages/Admin/IndexPage.vue')
+    },
+
+    //AdminIndexPage
 ];
 
 

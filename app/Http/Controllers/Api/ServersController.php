@@ -35,8 +35,6 @@ class ServersController extends Controller
             } catch( MinecraftPingException $e ) {
                 $responses[] = $e->getMessage();
             }
-            // $responses[] = (new Rcon())->connection('rcon_'.$server->id)
-            //    ->command('list');
         });
 
         return $responses;

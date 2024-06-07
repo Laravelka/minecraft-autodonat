@@ -1,9 +1,28 @@
 <script lang="ts">
-import {defineComponent} from 'vue'
+import {defineComponent, ref} from 'vue'
+import PurchaseModal from './PurchaseModal.vue';
 
 export default defineComponent({
     name: "ProductItem",
-    props: ['product']
+    props: ['product'],
+    components: {PurchaseModal},
+    setup() {
+        const isModalOpen = ref(false);
+
+        const openModal = () => {
+            isModalOpen.value = true;
+        };
+
+        const closeModal = () => {
+            isModalOpen.value = false;
+        };
+
+        return {
+            openModal,
+            closeModal,
+            isModalOpen
+        }
+    }
 })
 </script>
 
@@ -23,13 +42,18 @@ export default defineComponent({
                         {{ product.description }}
                     </p>
                 </div>
-                <div class="ps-1">
-                    <img src="https://minecraft-theme.netlify.app/imgs/icons/large-arrow-right.png" class="flex-shrink-0 size-2.5 object-contain m-[1rem] [transform:scale(2)]">
+                <div class="ps-1" @click="openModal">
+                    <img @click="openModal" src="https://minecraft-theme.netlify.app/imgs/icons/large-arrow-right.png" class="flex-shrink-0 size-2.5 object-contain m-[1rem] [transform:scale(2)]">
                     <svg class="hidden flex-shrink-0 size-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                 </div>
             </div>
         </div>
     </a>
+    <PurchaseModal
+      :isOpen="isModalOpen"
+      :product="product"
+      @close="closeModal"
+    />
 </template>
 
 <style scoped>

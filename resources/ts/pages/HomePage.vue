@@ -1,13 +1,15 @@
 <script lang="ts">
 import {defineComponent, ref} from 'vue'
 import axios from "axios";
-import ServerListItem from "../components/ServerListItem.vue";
 import {parseJsonToHtml} from "../helpers";
+
 import ProductItem from "../components/ProductItem.vue";
+import ServerListItem from "../components/ServerListItem.vue";
+import RecentPurchases from "../components/RecentPurchases.vue";
 
 export default defineComponent({
     name: "HomePage.vue",
-    components: {ProductItem, ServerListItem},
+    components: {ProductItem, ServerListItem, RecentPurchases},
     setup() {
         const servers = ref([]);
         const categories = ref([]);
@@ -153,8 +155,6 @@ export default defineComponent({
             <div v-if="activeCategory?.products?.length == 0" class="col-span-3 text-gray-400 px-1">Пока что пусто...</div>
             <!-- Products -->
             <product-item v-for="(product, i) in activeCategory?.products" v-bind:key="i" :product="product"></product-item>
-            <product-item v-for="(product, i) in activeCategory?.products" v-bind:key="i" :product="product"></product-item>
-            <product-item v-for="(product, i) in activeCategory?.products" v-bind:key="i" :product="product"></product-item>
             <!-- End Products -->
         </div>
         <!-- End Grid -->
@@ -170,6 +170,7 @@ export default defineComponent({
     </div>
 
     <!-- End Servers Section  -->
+    <RecentPurchases></RecentPurchases>
     <div class="max-w-[85rem] px-4 py-6 sm:px-6 lg:px-8 lg:py-14">
         <h1 class="text-white text-2xl">Последние покупки</h1>
     </div>

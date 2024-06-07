@@ -7,17 +7,41 @@ export default defineComponent({
 </script>
 
 <template>
+    <footer class="bg-neutral-800 p-8 text-gray-300">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="font-bold">© Aormio 2024. Игра только на новых версиях!</h3>
+                <p>Сервер никак не относится к Mojang, AB.</p>
+                <p>Для получения дополнительной информации и помощи, обратитесь по адресу mine.javer@gmail.com</p>
+                <p>ИП Попов Иван Александрович (ИНН 510902483740 ОГРНИП 321519000000836)</p>
+            </div>
+            <div>
+                <h3 class="font-semibold">Информация о проведении, порядке оплаты и правилах</h3>
+                <p>При оплате заказа банковской картой, обработка платежа происходит на авторизационной странице банка, где Вам необходимо ввести данные Вашей банковской карты: тип карты, номер карты, срок действия карты, CVC2/CVV2 код.</p>
+                <p>Если Ваша карта подключена к услуге 3D-Secure, Вы будете автоматически переадресованы на страницу банка, выпустившего карту, для прохождения процедуры аутентификации. Информацию о правилах и методах дополнительной идентификации уточняйте в Банке, выдавшем Вам банковскую карту.</p>
+            </div>
+            <div>
+                <h3 class="font-semibold">Договор оферты</h3>
+                <p>Политика обработки персональных данных</p>
+                <div class="flex space-x-4 mt-4">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard" class="h-8">
+                    <img src="https://aormio.ru/imgs/6c11c9b43a663420b600306d525376eb.png" alt="Visa" class="h-8">
+                    <img src="https://aormio.ru/imgs/sbp.svg" alt="SBP" class="h-8">
+                </div>
+            </div>
+        </div>
+    </footer>
     <!-- ========== FOOTER ========== -->
-    <footer class="mt-10 w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
+    <footer class="mt-10 w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto hidden">
         <!-- Grid -->
         <div class="text-center">
             <div>
-                <a class="flex-none text-xl font-semibold text-black dark:text-white" href="#" aria-label="Brand">Minecraft</a>
+                <a class="flex-none text-xl font-semibold text-black dark:text-white" href="#" aria-label="Brand">Aormio</a>
             </div>
             <!-- End Col -->
 
             <div class="mt-3">
-                <p class="text-gray-500 dark:text-neutral-500">© Minecraft. 2024. All rights reserved.</p>
+                <p class="text-gray-500 dark:text-neutral-500">© Aormio. 2024. Игра только на новых версиях!</p>
             </div>
 
             <!-- Social Brands -->
